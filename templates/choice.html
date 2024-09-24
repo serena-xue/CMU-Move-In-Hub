@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择界面</title>
+    <script>
+        function navigateToPage(value) {
+            if (value === '短期') {
+                window.location.href = "{{ url_for('short_term') }}";
+            } else if (value === '长期') {
+                window.location.href = "{{ url_for('long_term') }}";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>请选择一个选项：</h1>
+    <form>
+        <label>
+            <input type="radio" name="option" value="短期" onclick="navigateToPage(this.value)"> 短期
+        </label><br>
+        <label>
+            <input type="radio" name="option" value="长期" onclick="navigateToPage(this.value)"> 长期
+        </label>
+    </form>
+</body>
+</html>

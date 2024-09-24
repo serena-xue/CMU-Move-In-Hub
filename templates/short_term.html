@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>短期选择</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .table-container {
+            width: 45%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>短期选择</h1>
+    <div class="container">
+        <!-- Hotel 表格 -->
+        <div class="table-container">
+            <h2>Hotel</h2>
+            <table>
+                <tr>
+                    <th>Position</th>
+                    <th>Amenity</th>
+                    <th>Price($/day)</th>
+                </tr>
+                {% for row in hotel_data %}
+                <tr>
+                    <td>{{ row.Position }}</td>
+                    <td>{{ row.Amenity }}</td>
+                    <td>{{ row.Price }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <!-- Airbnb 表格 -->
+        <div class="table-container">
+            <h2>Airbnb</h2>
+            <table>
+                <tr>
+                    <th>Price($/day)</th>
+                    <th>Amenity</th>
+                    <th>Landlord</th>
+                </tr>
+                {% for row in airbnb_data %}
+                <tr>
+                    <td>{{ row.Price }}</td>
+                    <td>{{ row.Amenity }}</td>
+                    <td>{{ row.Landlord }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>
