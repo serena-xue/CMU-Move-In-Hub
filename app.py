@@ -1,5 +1,5 @@
 import pandas as pd
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -16,7 +16,6 @@ def choice():
 
 @app.route('/short_term')
 def short_term():
-    # 从CSV文件读取数据
     hotel_data = pd.read_csv('data/hotel.csv').to_dict(orient='records')
     airbnb_data = pd.read_csv('data/airbnb.csv').to_dict(orient='records')
 
@@ -25,7 +24,7 @@ def short_term():
 
 @app.route('/long_term')
 def long_term():
-    return "长期界面"
+    return "Long Term Housing"
 
 
 if __name__ == '__main__':

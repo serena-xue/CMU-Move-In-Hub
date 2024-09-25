@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>选择界面</title>
+    <title>Choose Time Scale</title>
     <script>
         function navigateToPage(value) {
-            if (value === '短期') {
+            if (value === 'Short Term') {
                 window.location.href = "{{ url_for('short_term') }}";
-            } else if (value === '长期') {
+            } else if (value === 'Long Term') {
                 window.location.href = "{{ url_for('long_term') }}";
             }
         }
     </script>
 </head>
 <body>
-    <h1>请选择一个选项：</h1>
+    <h1>How long do you want to stay?</h1>
     <form>
         <label>
-            <input type="radio" name="option" value="短期" onclick="navigateToPage(this.value)"> 短期
+            <input type="radio" name="option" value="Short Term" onclick="navigateToPage(this.value)"> Short Term
         </label><br>
         <label>
-            <input type="radio" name="option" value="长期" onclick="navigateToPage(this.value)"> 长期
+            <input type="radio" name="option" value="Long Term" onclick="navigateToPage(this.value)"> Long Term
         </label>
     </form>
 </body>
